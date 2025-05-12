@@ -15,6 +15,7 @@ class MviViewModel(private val getNewsUseCase: GetNewsUseCase) : ViewModel() {
     fun onAction(action: MviAction) {
         when (action) {
             MviAction.AskForNews -> getNews()
+            else -> Unit
             // Acá irían todas las demás actions que puedas tener
         }
     }

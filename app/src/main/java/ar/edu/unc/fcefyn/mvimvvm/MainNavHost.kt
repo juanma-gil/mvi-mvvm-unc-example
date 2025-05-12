@@ -9,6 +9,8 @@ import ar.edu.unc.fcefyn.mvimvvm.data.NewsRepository
 import ar.edu.unc.fcefyn.mvimvvm.data.NewsService
 import ar.edu.unc.fcefyn.mvimvvm.domain.GetNewsUseCase
 import ar.edu.unc.fcefyn.mvimvvm.presentation.MainScreenRoot
+import ar.edu.unc.fcefyn.mvimvvm.presentation.mvi.MviScreenRoot
+import ar.edu.unc.fcefyn.mvimvvm.presentation.mvi.MviViewModel
 import ar.edu.unc.fcefyn.mvimvvm.presentation.mvvm.MvvmScreenRoot
 import ar.edu.unc.fcefyn.mvimvvm.presentation.mvvm.MvvmViewModel
 
@@ -31,6 +33,14 @@ fun MainNavHost(
 
             MvvmScreenRoot(
                 viewModel = mvvmViewModel,
+                navController = navController
+            )
+        }
+
+        composable(Screen.MviScreen.route) {
+            val mviViewModel = MviViewModel(getNewsUseCase)
+            MviScreenRoot(
+                viewModel = mviViewModel,
                 navController = navController
             )
         }
