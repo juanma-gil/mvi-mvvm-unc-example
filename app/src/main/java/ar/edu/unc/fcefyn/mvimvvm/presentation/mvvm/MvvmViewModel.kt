@@ -24,4 +24,11 @@ class MvvmViewModel(private val getNewsUseCase: GetNewsUseCase) : ViewModel() {
         news = result
         isLoading = false
     }
+
+    // En una app real esto no es necesario, xq' el viewmodel está atado al lifecycle
+    fun resetState() {
+        isLoading = false
+        error = null
+        news = emptyList()
+    }
 }

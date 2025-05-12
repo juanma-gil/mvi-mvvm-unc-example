@@ -2,7 +2,7 @@ package ar.edu.unc.fcefyn.mvimvvm.data
 
 import ar.edu.unc.fcefyn.mvimvvm.data.model.NewsApiModel
 
-object NewsService {
+class NewsService {
     fun mockApiNewsResponse(): List<NewsApiModel> {
         return listOf(
             NewsApiModel(

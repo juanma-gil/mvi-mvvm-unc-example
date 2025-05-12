@@ -19,14 +19,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import ar.edu.unc.fcefyn.mvimvvm.Screen
 
 @Composable
 fun MainScreenRoot(
     navController: NavHostController,
 ) {
     MainScreen(
-        navToMVI = { navController.navigate("mvi") },
-        navToMVVM = { navController.navigate("mvvm") })
+        navToMVI = { navController.navigate(Screen.MviScreen.route) },
+        navToMVVM = { navController.navigate(Screen.MvvmScreen.route) })
 }
 
 @Composable
